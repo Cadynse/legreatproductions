@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <title>Le Great Productions</title>
 
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/art/world.png">
+
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -26,6 +29,7 @@ body {
   justify-content: center;
   pointer-events: none;
   text-align: center;
+  z-index: 2;
 }
 
 /* Hero wrapper */
@@ -72,9 +76,17 @@ body {
   text-align: center;
 }
 
+/* GAP FILLER IMAGE */
+#gap-filler {
+  width: 100%;
+  display: block;
+  margin-top: 0;
+  z-index: 1;
+}
+
 /* Scroll space */
 #scroll-space {
-  height: 200vh; /* shorter scroll */
+  height: 150vh; /* shorter scroll */
 }
 
 /* Hero reveal animation */
@@ -88,6 +100,7 @@ body {
 
 body.unlocked #hero {
   position: absolute;
+  z-index: 2;
 }
 
 /* BUTTON SECTION */
@@ -96,14 +109,16 @@ body.unlocked #hero {
   flex-direction: column;
   align-items: center;
   gap: 60px;
-  margin-top: 100px;
+  margin-top: -10px; /* slightly lower gap */
+  z-index: 2;
+  position: relative;
 }
 
 /* Central main button - bigger */
 .central-button {
   display: inline-block;
-  padding: 28px 70px;
-  font-size: clamp(1.6rem, 3vw, 2.5rem);
+  padding: 36px 90px;  /* bigger */
+  font-size: clamp(2rem, 4vw, 3rem); /* larger font */
   font-weight: 700;
   color: #000;
   background: #fff;
@@ -111,13 +126,13 @@ body.unlocked #hero {
   border-radius: 12px;
   cursor: pointer;
   text-decoration: none;
-  box-shadow: 6px 6px 16px rgba(0,0,0,0.25);
+  box-shadow: 6px 6px 20px rgba(0,0,0,0.25);
   transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease, color 0.3s ease;
 }
 
 .central-button:hover {
-  transform: scale(1.08);
-  box-shadow: 8px 8px 22px rgba(0,0,0,0.35);
+  transform: scale(1.1);
+  box-shadow: 8px 8px 26px rgba(0,0,0,0.35);
   background: #000;
   color: #fff;
 }
@@ -136,11 +151,11 @@ body.unlocked #hero {
   gap: 40px;
 }
 
-/* Tilted buttons - same tilt */
+/* Tilted buttons - bigger */
 .tilt-button {
   display: inline-block;
-  padding: 18px 40px;
-  font-size: clamp(1rem, 2vw, 1.5rem);
+  padding: 24px 50px; /* bigger */
+  font-size: clamp(1.4rem, 2.5vw, 2rem); /* larger font */
   font-weight: 700;
   color: #000;
   background: #fff;
@@ -149,7 +164,7 @@ body.unlocked #hero {
   cursor: pointer;
   text-decoration: none;
   transform: rotate(6deg);
-  box-shadow: 4px 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 4px 4px 14px rgba(0,0,0,0.25);
   transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease, color 0.3s ease;
 }
 
@@ -158,8 +173,8 @@ body.unlocked #hero {
 }
 
 .tilt-button:hover {
-  transform: rotate(0deg) scale(1.05);
-  box-shadow: 6px 6px 16px rgba(0,0,0,0.3);
+  transform: rotate(0deg) scale(1.08);
+  box-shadow: 6px 6px 18px rgba(0,0,0,0.3);
   background: #000;
   color: #fff;
 }
@@ -185,6 +200,10 @@ body.unlocked #hero {
   </div>
 </div>
 
+<!-- GAP FILLER IMAGE -->
+<img id="gap-filler" src="/art/gapfiller.png" alt="gap filler">
+
+<!-- Scroll space -->
 <div id="scroll-space"></div>
 
 <!-- Buttons section -->

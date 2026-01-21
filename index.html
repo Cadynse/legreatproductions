@@ -82,7 +82,7 @@ body {
   height: 200px;
   display: block;
   opacity: 0;
-  margin: 40px auto 0 auto; /* spacing between hero and buttons */
+  margin: 40px auto 0 auto;
   transition: opacity 1s ease, transform 1s ease;
   z-index: 1;
   transform: translateY(20px);
@@ -113,9 +113,12 @@ body.unlocked #hero {
   flex-direction: column;
   align-items: center;
   gap: 60px;
-  margin-top: -50px; /* bring buttons up closer to hero + chainz */
+  margin-top: 150px; /* LOWER buttons a lot now */
   z-index: 2;
   position: relative;
+  opacity: 0; /* hide initially */
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
 }
 
 /* Central main button - bigger */
@@ -234,6 +237,7 @@ const text = document.getElementById("hell-text");
 const subtitle = document.getElementById("subtitle");
 const devLabel = document.getElementById("developer-label");
 const chainz = document.getElementById("chainz");
+const buttonsSection = document.getElementById("buttons-section");
 const body = document.body;
 
 /* 2.5D parallax for hero title */
@@ -263,7 +267,7 @@ function animate() {
 }
 animate();
 
-/* Subtitle, developer label, and chainz reveal */
+/* Subtitle, developer label, chainz, and buttons reveal */
 setTimeout(() => {
   subtitle.style.opacity = "1";
   subtitle.style.transform = "translateY(0)";
@@ -275,6 +279,9 @@ setTimeout(() => {
 
   chainz.style.opacity = "1";
   chainz.style.transform = "translateY(0)";
+
+  buttonsSection.style.opacity = "1";
+  buttonsSection.style.transform = "translateY(0)";
 }, 4200);
 
 /* Unlock scroll & unfix hero */

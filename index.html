@@ -78,15 +78,16 @@ body {
 
 /* GAP FILLER IMAGE */
 #gap-filler {
-  width: 100%;
+  width: 100px;
+  height: 100px;
   display: block;
-  margin-top: 0;
+  margin: 80vh auto 0 auto; /* push it far down */
   z-index: 1;
 }
 
 /* Scroll space */
 #scroll-space {
-  height: 150vh; /* shorter scroll */
+  height: 50vh; /* shorter scroll now */
 }
 
 /* Hero reveal animation */
@@ -109,7 +110,7 @@ body.unlocked #hero {
   flex-direction: column;
   align-items: center;
   gap: 60px;
-  margin-top: -10px; /* slightly lower gap */
+  margin-top: -150px; /* bring buttons up immediately after hero */
   z-index: 2;
   position: relative;
 }
@@ -117,8 +118,8 @@ body.unlocked #hero {
 /* Central main button - bigger */
 .central-button {
   display: inline-block;
-  padding: 36px 90px;  /* bigger */
-  font-size: clamp(2rem, 4vw, 3rem); /* larger font */
+  padding: 36px 90px;  
+  font-size: clamp(2rem, 4vw, 3rem); 
   font-weight: 700;
   color: #000;
   background: #fff;
@@ -154,8 +155,8 @@ body.unlocked #hero {
 /* Tilted buttons - bigger */
 .tilt-button {
   display: inline-block;
-  padding: 24px 50px; /* bigger */
-  font-size: clamp(1.4rem, 2.5vw, 2rem); /* larger font */
+  padding: 24px 50px; 
+  font-size: clamp(1.4rem, 2.5vw, 2rem); 
   font-weight: 700;
   color: #000;
   background: #fff;

@@ -1,10 +1,261 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Le Great Productions</title>
+<meta charset="UTF-8">
+<title>Le Great Productions</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Oswald', sans-serif;
+  background: #ffffff;
+  color: #000000;
+  overflow: hidden; /* locked initially */
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* HERO SECTION */
+#hero {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  text-align: center;
+}
+
+/* Hero wrapper */
+#text-wrapper {
+  opacity: 0;
+  transform: translateY(30px);
+  filter: blur(8px);
+  animation: reveal 2.5s ease-out forwards;
+  animation-delay: 2s;
+}
+
+/* Main title */
+#hell-text {
+  font-size: clamp(3.5rem, 10vw, 9rem);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #000;
+  will-change: transform, text-shadow;
+}
+
+/* Subtitle */
+#subtitle {
+  margin-top: 24px;
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  letter-spacing: 0.2em;
+  text-transform: lowercase;
+  color: #000;
+  opacity: 0;
+  transform: translateY(12px);
+  filter: blur(6px);
+  transition: opacity 1.5s ease, transform 1.5s ease, filter 1.5s ease;
+}
+
+/* Developer label */
+#developer-label {
+  margin-top: 60px;
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  font-weight: 600;
+  color: #000;
+  opacity: 0;
+  transform: translateY(20px);
+  filter: blur(6px);
+  transition: opacity 1.5s ease, transform 1.5s ease, filter 1.5s ease;
+  text-align: center;
+}
+
+/* Scroll space */
+#scroll-space {
+  height: 200vh; /* shorter scroll */
+}
+
+/* Hero reveal animation */
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+body.unlocked #hero {
+  position: absolute;
+}
+
+/* BUTTON SECTION */
+#buttons-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  margin-top: 100px;
+}
+
+/* Central main button - bigger */
+.central-button {
+  display: inline-block;
+  padding: 28px 70px;
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: #000;
+  background: #fff;
+  border: 3px solid #000;
+  border-radius: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 6px 6px 16px rgba(0,0,0,0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.central-button:hover {
+  transform: scale(1.08);
+  box-shadow: 8px 8px 22px rgba(0,0,0,0.35);
+  background: #000;
+  color: #fff;
+}
+
+/* Central subtitle */
+.central-subtitle {
+  margin-top: 12px;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  color: #000;
+  text-align: center;
+}
+
+/* Tilted buttons wrapper */
+.tilt-buttons-wrapper {
+  display: flex;
+  gap: 40px;
+}
+
+/* Tilted buttons - same tilt */
+.tilt-button {
+  display: inline-block;
+  padding: 18px 40px;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: 700;
+  color: #000;
+  background: #fff;
+  border: 3px solid #000;
+  border-radius: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  transform: rotate(6deg);
+  box-shadow: 4px 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.tilt-button:nth-child(2) {
+  transform: rotate(6deg);
+}
+
+.tilt-button:hover {
+  transform: rotate(0deg) scale(1.05);
+  box-shadow: 6px 6px 16px rgba(0,0,0,0.3);
+  background: #000;
+  color: #fff;
+}
+
+/* Subtitles for tilted buttons */
+.tilt-subtitle {
+  margin-top: 6px;
+  font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+  text-align: center;
+  color: #000;
+}
+</style>
 </head>
+
 <body>
-  <h1>It works 🚀</h1>
+
+<!-- Hero -->
+<div id="hero">
+  <div id="text-wrapper">
+    <div id="hell-text">WELCOME TO GAME</div>
+    <div id="subtitle">we great</div>
+    <div id="developer-label">The Main Developer's, Reebe man and the Cadynse</div>
+  </div>
+</div>
+
+<div id="scroll-space"></div>
+
+<!-- Buttons section -->
+<section id="buttons-section">
+  <a href="https://www.roblox.com/communities/32591471/le-great-productions#!/about" target="_blank" class="central-button">
+    Roblox
+  </a>
+  <div class="central-subtitle">the place where stuff gets done</div>
+
+  <div class="tilt-buttons-wrapper">
+    <div>
+      <a href="https://discord.com/invite/Yd7jAnTCAZ" target="_blank" class="tilt-button">Discord</a>
+      <div class="tilt-subtitle">follow me into my world</div>
+    </div>
+    <div>
+      <a href="https://x.com/greatprodroblox" target="_blank" class="tilt-button">Twitter</a>
+      <div class="tilt-subtitle">follow me into update city</div>
+    </div>
+  </div>
+</section>
+
+<script>
+const text = document.getElementById("hell-text");
+const subtitle = document.getElementById("subtitle");
+const devLabel = document.getElementById("developer-label");
+const body = document.body;
+
+/* 2.5D parallax for hero title */
+let targetX = 0, targetY = 0;
+let currentX = 0, currentY = 0;
+
+document.addEventListener("mousemove", e => {
+  targetX = (e.clientX / window.innerWidth - 0.5) * 2;
+  targetY = (e.clientY / window.innerHeight - 0.5) * 2;
+});
+
+function animate() {
+  currentX += (targetX - currentX) * 0.05;
+  currentY += (targetY - currentY) * 0.05;
+
+  const moveX = currentX * 12;
+  const moveY = currentY * 8;
+
+  text.style.transform = `translate(${moveX}px, ${moveY}px)`;
+  text.style.textShadow = `
+    ${-moveX * 0.15}px ${-moveY * 0.15}px 0 rgba(0,0,0,0.15),
+    ${-moveX * 0.3}px ${-moveY * 0.3}px 0 rgba(0,0,0,0.25),
+    ${-moveX * 0.5}px ${-moveY * 0.5}px 12px rgba(0,0,0,0.35)
+  `;
+
+  requestAnimationFrame(animate);
+}
+animate();
+
+/* Subtitle & developer label reveal */
+setTimeout(() => {
+  subtitle.style.opacity = "1";
+  subtitle.style.transform = "translateY(0)";
+  subtitle.style.filter = "blur(0)";
+
+  devLabel.style.opacity = "1";
+  devLabel.style.transform = "translateY(0)";
+  devLabel.style.filter = "blur(0)";
+}, 4200);
+
+/* Unlock scroll & unfix hero */
+setTimeout(() => {
+  body.style.overflowY = "auto";
+  body.classList.add("unlocked");
+}, 5200);
+</script>
+
 </body>
 </html>

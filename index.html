@@ -76,18 +76,21 @@ body {
   text-align: center;
 }
 
-/* GAP FILLER IMAGE */
-#gap-filler {
-  width: 100px;
-  height: 100px;
+/* CHAINZ IMAGE */
+#chainz {
+  width: 200px;
+  height: 200px;
   display: block;
-  margin: 80vh auto 0 auto; /* push it far down */
+  opacity: 0;
+  margin: 40px auto 0 auto; /* spacing between hero and buttons */
+  transition: opacity 1s ease, transform 1s ease;
   z-index: 1;
+  transform: translateY(20px);
 }
 
 /* Scroll space */
 #scroll-space {
-  height: 50vh; /* shorter scroll now */
+  height: 50vh;
 }
 
 /* Hero reveal animation */
@@ -110,7 +113,7 @@ body.unlocked #hero {
   flex-direction: column;
   align-items: center;
   gap: 60px;
-  margin-top: -150px; /* bring buttons up immediately after hero */
+  margin-top: -50px; /* bring buttons up closer to hero + chainz */
   z-index: 2;
   position: relative;
 }
@@ -201,8 +204,8 @@ body.unlocked #hero {
   </div>
 </div>
 
-<!-- GAP FILLER IMAGE -->
-<img id="gap-filler" src="/art/gapfiller.png" alt="gap filler">
+<!-- Chainz image -->
+<img id="chainz" src="/art/chainz.png" alt="chainz">
 
 <!-- Scroll space -->
 <div id="scroll-space"></div>
@@ -230,6 +233,7 @@ body.unlocked #hero {
 const text = document.getElementById("hell-text");
 const subtitle = document.getElementById("subtitle");
 const devLabel = document.getElementById("developer-label");
+const chainz = document.getElementById("chainz");
 const body = document.body;
 
 /* 2.5D parallax for hero title */
@@ -259,7 +263,7 @@ function animate() {
 }
 animate();
 
-/* Subtitle & developer label reveal */
+/* Subtitle, developer label, and chainz reveal */
 setTimeout(() => {
   subtitle.style.opacity = "1";
   subtitle.style.transform = "translateY(0)";
@@ -268,6 +272,9 @@ setTimeout(() => {
   devLabel.style.opacity = "1";
   devLabel.style.transform = "translateY(0)";
   devLabel.style.filter = "blur(0)";
+
+  chainz.style.opacity = "1";
+  chainz.style.transform = "translateY(0)";
 }, 4200);
 
 /* Unlock scroll & unfix hero */
